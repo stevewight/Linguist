@@ -14,7 +14,7 @@ class DuoUser: NSObject {
     var created = ""
     var streakExtendedToday = false
     var learningLanguage = ""
-    var duoLanguage = DuoLanguage()
+    var duoLanguages = [String:DuoLanguage]()
     
     override init() {
         super.init()
@@ -40,6 +40,17 @@ class DuoUser: NSObject {
         
         if let newLearningLanguage = rawJson["learning_language"] as? String {
             learningLanguage = newLearningLanguage
+        }
+        
+        if let newDuoLanguage = rawJson["language_data"] as? [String:AnyObject] {
+            createDuoLanguages(rawJson: newDuoLanguage)
+        }
+    }
+    
+    func createDuoLanguages(rawJson:[String:AnyObject]) {
+        for (k,v) in rawJson {
+            let newDuoLanguage = DuoLanguage(rawJson: v as! [String : AnyObject])
+            self.duoLanguages[k] = newDuoLanguage!
         }
     }
     
