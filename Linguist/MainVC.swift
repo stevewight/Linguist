@@ -9,10 +9,13 @@
 import UIKit
 
 class MainVC: UIViewController {
+    
+    var client = DuoClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("finished loading mainVC")
+        client.loadFromDuo()
     }
 
 }

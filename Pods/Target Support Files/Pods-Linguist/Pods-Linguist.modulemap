@@ -1,0 +1,6 @@
+framework module Pods_Linguist {
+  umbrella header "Pods-Linguist-umbrella.h"
+
+  export *
+  module * { export * }
+}
