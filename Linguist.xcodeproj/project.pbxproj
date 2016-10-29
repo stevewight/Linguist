@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		95BBBD89E858CF0ED7FF7A03 /* Pods_Linguist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B5F43C3C091A4F960DE883 /* Pods_Linguist.framework */; };
+		AA456AFA1DC5412300D9FD8B /* DuoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456AF91DC5412300D9FD8B /* DuoUser.swift */; };
+		AA456AFC1DC5422000D9FD8B /* DuoLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456AFB1DC5422000D9FD8B /* DuoLanguage.swift */; };
 		AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261981DC532AA0000E024 /* AppDelegate.swift */; };
 		AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* MainVC.swift */; };
 		AAF2619E1DC532AA0000E024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619C1DC532AA0000E024 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		608E50722660DA1C2B684B20 /* Pods-Linguist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Linguist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Linguist/Pods-Linguist.debug.xcconfig"; sourceTree = "<group>"; };
 		69B5F43C3C091A4F960DE883 /* Pods_Linguist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Linguist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA456AF91DC5412300D9FD8B /* DuoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoUser.swift; path = Models/DuoUser.swift; sourceTree = "<group>"; };
+		AA456AFB1DC5422000D9FD8B /* DuoLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoLanguage.swift; path = Models/DuoLanguage.swift; sourceTree = "<group>"; };
 		AAF261951DC532AA0000E024 /* Linguist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF261981DC532AA0000E024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF2619A1DC532AA0000E024 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				AAF261AC1DC535720000E024 /* DuoClient.swift */,
+				AA456AF91DC5412300D9FD8B /* DuoUser.swift */,
+				AA456AFB1DC5422000D9FD8B /* DuoLanguage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -233,7 +239,9 @@
 			files = (
 				AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */,
 				AAF261AD1DC535720000E024 /* DuoClient.swift in Sources */,
+				AA456AFC1DC5422000D9FD8B /* DuoLanguage.swift in Sources */,
 				AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */,
+				AA456AFA1DC5412300D9FD8B /* DuoUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
