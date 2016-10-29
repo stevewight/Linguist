@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261981DC532AA0000E024 /* AppDelegate.swift */; };
-		AAF2619B1DC532AA0000E024 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* ViewController.swift */; };
+		AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* MainVC.swift */; };
 		AAF2619E1DC532AA0000E024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619C1DC532AA0000E024 /* Main.storyboard */; };
 		AAF261A01DC532AA0000E024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619F1DC532AA0000E024 /* Assets.xcassets */; };
 		AAF261A31DC532AA0000E024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF261A11DC532AA0000E024 /* LaunchScreen.storyboard */; };
+		AAF261AD1DC535720000E024 /* DuoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261AC1DC535720000E024 /* DuoClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AAF261951DC532AA0000E024 /* Linguist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF261981DC532AA0000E024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAF2619A1DC532AA0000E024 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAF2619A1DC532AA0000E024 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		AAF2619D1DC532AA0000E024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAF2619F1DC532AA0000E024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF261A21DC532AA0000E024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAF261A41DC532AA0000E024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF261AC1DC535720000E024 /* DuoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoClient.swift; path = Models/DuoClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		AAF261971DC532AA0000E024 /* Linguist */ = {
 			isa = PBXGroup;
 			children = (
+				AAF261AB1DC535420000E024 /* Models */,
 				AAF261981DC532AA0000E024 /* AppDelegate.swift */,
-				AAF2619A1DC532AA0000E024 /* ViewController.swift */,
 				AAF2619C1DC532AA0000E024 /* Main.storyboard */,
-				AAF2619F1DC532AA0000E024 /* Assets.xcassets */,
+				AAF261AA1DC532D60000E024 /* Controllers */,
 				AAF261A11DC532AA0000E024 /* LaunchScreen.storyboard */,
 				AAF261A41DC532AA0000E024 /* Info.plist */,
+				AAF2619F1DC532AA0000E024 /* Assets.xcassets */,
 			);
 			path = Linguist;
+			sourceTree = "<group>";
+		};
+		AAF261AA1DC532D60000E024 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAF2619A1DC532AA0000E024 /* MainVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AAF261AB1DC535420000E024 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAF261AC1DC535720000E024 /* DuoClient.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +156,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF2619B1DC532AA0000E024 /* ViewController.swift in Sources */,
+				AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */,
+				AAF261AD1DC535720000E024 /* DuoClient.swift in Sources */,
 				AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
