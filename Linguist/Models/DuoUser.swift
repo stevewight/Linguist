@@ -28,7 +28,10 @@ class DuoUser: NSObject {
         }
         
         if let newCreated = rawJson["created"] as? String {
-            created = newCreated
+            created = newCreated.replacingOccurrences(
+                of: "\n",
+                with: ""
+            )
         }
         
         if let newStreakExtendedToday = rawJson["streak_extended_today"] as? Bool {
