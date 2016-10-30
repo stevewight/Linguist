@@ -47,6 +47,10 @@ class DuoUser: NSObject {
         }
     }
     
+    func duoLanguage()->DuoLanguage {
+        return duoLanguages[learningLanguage]!
+    }
+    
     func createDuoLanguages(rawJson:[String:AnyObject]) {
         for (k,v) in rawJson {
             let newDuoLanguage = DuoLanguage(rawJson: v as! [String : AnyObject])

@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.1 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-QQ-RBN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-QQ-RBN">
                                 <rect key="frame" x="115" y="126" width="146" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="hbK-fU-oRy"/>
@@ -32,7 +32,7 @@
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fluent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-TE-dgD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% fluent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-TE-dgD">
                                 <rect key="frame" x="192" y="187" width="69" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="75e-hC-Cyi"/>
@@ -52,6 +52,9 @@
                                 <state key="normal" title="Reload Stats">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2a-Da-Qay"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDw-h2-62p">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -82,6 +85,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4Xi-w0-2FA" secondAttribute="trailing" id="zc6-wc-x1U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fluencyLabel" destination="rs5-QQ-RBN" id="56T-Q4-5tU"/>
+                        <outlet property="navBar" destination="NDw-h2-62p" id="mnn-I3-ZEm"/>
+                        <outlet property="reloadButton" destination="4Xi-w0-2FA" id="QFN-ha-JlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

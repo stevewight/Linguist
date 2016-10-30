@@ -9,20 +9,23 @@
 import UIKit
 import Alamofire
 
+protocol DuoClientDelegate {
+    func successLoadingUser()
+}
+
 class DuoClient: NSObject {
 
     let baseURL = "https://www.duolingo.com/"
     let currentUser = "steve296840"
     var duoUser = DuoUser()
     
-    func loadFromDuo() {
+    func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void) {
         let userURL = baseURL + "users/\(currentUser)"
        
         Alamofire.request(userURL).responseJSON { (response) in
             if let json = response.result.value as? [String:AnyObject] {
-                print("*** success parsing json...")
                 self.duoUser = DuoUser(rawJson: json)!
-                dump(self.duoUser)
+                success(self.duoUser)
             }
         }
     }
