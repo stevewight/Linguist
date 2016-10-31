@@ -13,17 +13,14 @@ class MainVC: UIViewController {
     var client = DuoClient()
     var duoUser = DuoUser()
     
-    @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var fluencyLabel: UILabel!
     @IBOutlet weak var skillsPercentLabel: UILabel!
     @IBOutlet weak var streakLabel: UILabel!
     @IBOutlet weak var extendedLabel: UILabel!
     @IBOutlet weak var skillsLabel: UILabel!
-    
-    @IBAction func reloadButtonTapped(_ sender: Any) {
-        print("reload user data")
-    }
+    @IBOutlet weak var fluencyCircle: CircleTileView!
+    @IBOutlet weak var skillsCircle: CircleTileView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +50,8 @@ class MainVC: UIViewController {
             extended: duoUser.streakExtendedToday
         )
         navBar.topItem?.title = duoLang.languageString
+        fluencyCircle.rating = CGFloat(duoLang.fluencyScore)
+        skillsCircle.rating = CGFloat(skillPercent)
     }
     
     func fluencyPercent(score:Double)->String {

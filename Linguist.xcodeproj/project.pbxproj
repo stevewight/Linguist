@@ -12,6 +12,7 @@
 		AA456AFC1DC5422000D9FD8B /* DuoLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456AFB1DC5422000D9FD8B /* DuoLanguage.swift */; };
 		AA456AFE1DC6AA5D00D9FD8B /* DuoImprovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456AFD1DC6AA5D00D9FD8B /* DuoImprovement.swift */; };
 		AA456B001DC6E6E300D9FD8B /* DuoSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456AFF1DC6E6E300D9FD8B /* DuoSkill.swift */; };
+		AA456B031DC7D02E00D9FD8B /* CircleTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456B021DC7D02E00D9FD8B /* CircleTileView.swift */; };
 		AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261981DC532AA0000E024 /* AppDelegate.swift */; };
 		AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* MainVC.swift */; };
 		AAF2619E1DC532AA0000E024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619C1DC532AA0000E024 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		AA456AFB1DC5422000D9FD8B /* DuoLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoLanguage.swift; path = Models/DuoLanguage.swift; sourceTree = "<group>"; };
 		AA456AFD1DC6AA5D00D9FD8B /* DuoImprovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoImprovement.swift; path = Models/DuoImprovement.swift; sourceTree = "<group>"; };
 		AA456AFF1DC6E6E300D9FD8B /* DuoSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoSkill.swift; path = Models/DuoSkill.swift; sourceTree = "<group>"; };
+		AA456B021DC7D02E00D9FD8B /* CircleTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleTileView.swift; path = Views/CircleTileView.swift; sourceTree = "<group>"; };
 		AAF261951DC532AA0000E024 /* Linguist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF261981DC532AA0000E024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF2619A1DC532AA0000E024 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA456B011DC7D01100D9FD8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA456B021DC7D02E00D9FD8B /* CircleTileView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AAF2618C1DC532AA0000E024 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 				AAF261981DC532AA0000E024 /* AppDelegate.swift */,
 				AAF2619C1DC532AA0000E024 /* Main.storyboard */,
 				AAF261AB1DC535420000E024 /* Models */,
+				AA456B011DC7D01100D9FD8B /* Views */,
 				AAF261AA1DC532D60000E024 /* Controllers */,
 				AAF261A11DC532AA0000E024 /* LaunchScreen.storyboard */,
 				AAF261A41DC532AA0000E024 /* Info.plist */,
@@ -245,6 +256,7 @@
 			files = (
 				AA456B001DC6E6E300D9FD8B /* DuoSkill.swift in Sources */,
 				AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */,
+				AA456B031DC7D02E00D9FD8B /* CircleTileView.swift in Sources */,
 				AAF261AD1DC535720000E024 /* DuoClient.swift in Sources */,
 				AA456AFC1DC5422000D9FD8B /* DuoLanguage.swift in Sources */,
 				AA456AFE1DC6AA5D00D9FD8B /* DuoImprovement.swift in Sources */,
