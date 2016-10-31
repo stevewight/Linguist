@@ -16,6 +16,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var fluencyLabel: UILabel!
+    @IBOutlet weak var skillsPercentLabel: UILabel!
     @IBOutlet weak var streakLabel: UILabel!
     @IBOutlet weak var extendedLabel: UILabel!
     @IBOutlet weak var skillsLabel: UILabel!
@@ -29,7 +30,6 @@ class MainVC: UIViewController {
         client.loadDuoUser { (newUser) in
             self.duoUser = newUser
             self.updateInterface()
-            dump(self.duoUser)
         }
     }
     
@@ -37,9 +37,15 @@ class MainVC: UIViewController {
     
     func updateInterface() {
         let duoLang = duoUser.duoLanguage()
+        let doubleTotal = Double(duoLang.skills.count)
+        let doubleLearned = Double(duoLang.numSkillsLearned)
+        let skillPercent = doubleLearned/doubleTotal
         
         fluencyLabel.text = fluencyPercent(
             score: duoLang.fluencyScore
+        )
+        skillsPercentLabel.text = skillsPercent(
+            score: skillPercent
         )
         streakLabel.text = "\(duoLang.streak)"
         skillsLabel.text = "\(duoLang.numSkillsLearned)"
@@ -52,6 +58,11 @@ class MainVC: UIViewController {
     func fluencyPercent(score:Double)->String {
         let percentDouble = score * 100
         return String(format: "%.1f", percentDouble)
+    }
+    
+    func skillsPercent(score:Double)->String {
+        let skillsDouble = score * 100
+        return String(format: "%.1f", skillsDouble)
     }
     
     func extendedString(extended:Bool)->String {
