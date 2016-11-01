@@ -48,7 +48,11 @@ class DuoUser: NSObject {
     }
     
     func duoLanguage()->DuoLanguage {
-        return duoLanguages[learningLanguage]!
+        if duoLanguages.count > 0 {
+            return duoLanguages[learningLanguage]!
+        } else {
+            return DuoLanguage()
+        }
     }
     
     func createDuoLanguages(rawJson:[String:AnyObject]) {

@@ -34,13 +34,30 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
     
     // MARK: (self) Methods
     
-    func beginLoadingUser() {
+    func updateInterface() {
         userTextField.resignFirstResponder()
         spinner.startAnimating()
         userTextField.isEnabled = false
         UIView.animate(withDuration: 2.0) {
             self.loadUserButton.alpha = 0.0
         }
+    }
+    
+    func beginLoadingUser() {
+        let client = DuoClient.sharedInstance
+        client.currentUser = userTextField.text!
+        client.loadDuoUser { (duoUser) in
+            let mainVC = self.getMainVC()
+            self.present(mainVC, animated: true, completion: nil)
+        }
+    }
+    
+    func getMainVC()-> MainVC {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(
+            withIdentifier: "MainVC"
+        ) as! MainVC
+        return vc
     }
 
 }

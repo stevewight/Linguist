@@ -14,9 +14,14 @@ protocol DuoClientDelegate {
 }
 
 class DuoClient: NSObject {
+    
+    static let sharedInstance = {
+        return DuoClient()
+    }()
 
+    // user: steve296840
     let baseURL = "https://www.duolingo.com/"
-    let currentUser = "steve296840"
+    var currentUser = ""
     var duoUser = DuoUser()
     
     func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void) {
