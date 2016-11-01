@@ -17,19 +17,30 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userTextField.becomeFirstResponder()
+        
+        //check if username saved in UseDefaults
+        let username = UserDefaults.standard.string(forKey: "DuoUserName")
+        if (username != nil) {
+            userTextField.text = username!
+            beginLoadingUser(username: username!)
+            updateInterface()
+        } else {
+            userTextField.becomeFirstResponder()
+        }
     }
     
     // MARK: @IBAction Methods
     
     @IBAction func loadUserButtonTapped(_ sender: Any) {
-        beginLoadingUser()
+        beginLoadingUser(username: userTextField.text!)
+        updateInterface()
     }
     
     // MARK: UITextFieldDelegate Methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        beginLoadingUser()
+        beginLoadingUser(username: userTextField.text!)
+        updateInterface()
         return true
     }
     
@@ -44,10 +55,11 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func beginLoadingUser() {
+    func beginLoadingUser(username:String) {
         let client = DuoClient.sharedInstance
-        client.currentUser = userTextField.text!
+        client.currentUser = username
         client.loadDuoUser(success: { (duoUser) in
+            self.setDefaultUsername(username: username)
             let mainVC = self.getMainVC()
             self.present(mainVC, animated: true, completion: nil)
         }) {
@@ -63,6 +75,10 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
             withIdentifier: "MainVC"
         ) as! MainVC
         return vc
+    }
+    
+    func setDefaultUsername(username:String) {
+        UserDefaults.standard.set(username, forKey: "DuoUserName")
     }
 
 }
