@@ -16,6 +16,7 @@ class DuoLanguage: NSObject {
     var numSkillsLearned = 0
     var improvements = [DuoImprovement]()
     var skills = [DuoSkill]()
+    var duoLevel = DuoLevel()
  
     override init() {
         super.init()
@@ -54,6 +55,7 @@ class DuoLanguage: NSObject {
             }
         }
         
+        duoLevel = DuoLevel(rawJson: rawJson)!
     }
     
 }

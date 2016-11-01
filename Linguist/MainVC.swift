@@ -25,6 +25,7 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         duoUser = DuoClient.sharedInstance.duoUser
+        dump(duoUser)
         self.updateInterface()
     }
     

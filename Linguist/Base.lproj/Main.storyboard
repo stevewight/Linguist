@@ -179,7 +179,14 @@
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Language" id="6vz-EQ-0YM"/>
+                                    <navigationItem title="Language" id="6vz-EQ-0YM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="4VG-hE-8gb">
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RLb-Hz-UNu">
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vA-mZ-tpa">
@@ -277,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.399999999999999" y="81.409295352323838"/>
+            <point key="canvasLocation" x="-33" y="81"/>
         </scene>
     </scenes>
 </document>
