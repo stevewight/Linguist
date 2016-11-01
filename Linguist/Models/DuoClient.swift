@@ -24,13 +24,20 @@ class DuoClient: NSObject {
     var currentUser = ""
     var duoUser = DuoUser()
     
-    func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void) {
+    func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void, failure:@escaping ()->Void) {
         let userURL = baseURL + "users/\(currentUser)"
        
         Alamofire.request(userURL).responseJSON { (response) in
-            if let json = response.result.value as? [String:AnyObject] {
-                self.duoUser = DuoUser(rawJson: json)!
-                success(self.duoUser)
+            switch response.result {
+            case .success(_):
+                if let json = response.result.value as? [String:AnyObject] {
+                    self.duoUser = DuoUser(rawJson: json)!
+                    success(self.duoUser)
+                }
+                break
+            case .failure(_):
+                failure()
+                break
             }
         }
     }

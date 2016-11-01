@@ -10,6 +10,7 @@ import UIKit
 
 class UserEnterVC: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var noticeLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var loadUserButton: UIButton!
@@ -46,9 +47,13 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
     func beginLoadingUser() {
         let client = DuoClient.sharedInstance
         client.currentUser = userTextField.text!
-        client.loadDuoUser { (duoUser) in
+        client.loadDuoUser(success: { (duoUser) in
             let mainVC = self.getMainVC()
             self.present(mainVC, animated: true, completion: nil)
+        }) {
+            self.noticeLabel.text = "Failed to load user, try again"
+            self.noticeLabel.alpha = 1.0
+            self.userTextField.text = ""
         }
     }
     

@@ -56,13 +56,25 @@
                                     <constraint firstAttribute="width" constant="37" id="MDP-Yf-WbE"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed to load user name..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-U2-hkt">
+                                <rect key="frame" x="16" y="87" width="343" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="FhD-qE-3QE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jyh-U2-hkt" secondAttribute="trailing" id="36H-Nu-UmZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jyh-U2-hkt" secondAttribute="leading" id="6FG-q0-TPO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xgk-SF-mwW" secondAttribute="leading" id="OL4-XW-pv3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tso-io-uAR" secondAttribute="leading" id="PwP-4M-95m"/>
                             <constraint firstItem="tso-io-uAR" firstAttribute="top" secondItem="Xgk-SF-mwW" secondAttribute="bottom" constant="33" id="UoB-MZ-ugz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xgk-SF-mwW" secondAttribute="trailing" id="WTa-cm-bzw"/>
+                            <constraint firstItem="jyh-U2-hkt" firstAttribute="top" secondItem="1nw-Uv-9c9" secondAttribute="bottom" constant="67" id="bXJ-Vh-lLg"/>
                             <constraint firstItem="dRD-At-glR" firstAttribute="top" secondItem="W4a-db-nSG" secondAttribute="bottom" constant="157" id="eGl-Ej-CB9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tso-io-uAR" secondAttribute="trailing" id="imD-NS-Vdi"/>
                             <constraint firstItem="dRD-At-glR" firstAttribute="top" secondItem="tso-io-uAR" secondAttribute="bottom" constant="301" id="tMn-Hg-gCz"/>
@@ -71,6 +83,7 @@
                     </view>
                     <connections>
                         <outlet property="loadUserButton" destination="tso-io-uAR" id="8mD-7l-xbu"/>
+                        <outlet property="noticeLabel" destination="jyh-U2-hkt" id="k28-8q-sGz"/>
                         <outlet property="spinner" destination="W4a-db-nSG" id="Mao-C6-HCU"/>
                         <outlet property="userTextField" destination="Xgk-SF-mwW" id="1VV-Fa-xeT"/>
                     </connections>
