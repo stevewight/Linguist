@@ -60,21 +60,13 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
         client.currentUser = username
         client.loadDuoUser(success: { (duoUser) in
             self.setDefaultUsername(username: username)
-            let mainVC = self.getMainVC()
+            let mainVC = VCHelper.getMainVC()
             self.present(mainVC, animated: true, completion: nil)
         }) {
             self.noticeLabel.text = "Failed to load user, try again"
             self.noticeLabel.alpha = 1.0
             self.userTextField.text = ""
         }
-    }
-    
-    func getMainVC()-> MainVC {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(
-            withIdentifier: "MainVC"
-        ) as! MainVC
-        return vc
     }
     
     func setDefaultUsername(username:String) {

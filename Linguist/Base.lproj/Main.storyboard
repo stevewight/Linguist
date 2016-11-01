@@ -13,7 +13,7 @@
         <!--User EnterVC-->
         <scene sceneID="Ezk-QU-lu8">
             <objects>
-                <viewController id="KXV-da-H5H" customClass="UserEnterVC" customModule="Linguist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserEnterVC" id="KXV-da-H5H" customClass="UserEnterVC" customModule="Linguist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1nw-Uv-9c9"/>
                         <viewControllerLayoutGuide type="bottom" id="dRD-At-glR"/>
@@ -182,9 +182,15 @@
                                     <navigationItem title="Language" id="6vz-EQ-0YM">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="4VG-hE-8gb">
                                             <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="BYZ-38-t0r" id="FiZ-XD-Ri8"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RLb-Hz-UNu">
                                             <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="4kb-cL-gTw"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

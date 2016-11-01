@@ -25,8 +25,19 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         duoUser = DuoClient.sharedInstance.duoUser
-        dump(duoUser)
         self.updateInterface()
+    }
+    
+    // MARK: IBAction Methods
+    
+    @IBAction func actionButtonTapped(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "DuoUserName")
+        let vc = VCHelper.getUserEnterVC()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func reloadButtonTapped(_ sender: Any) {
+        print("reload button tapped")
     }
     
     // MARK: (self) Methods

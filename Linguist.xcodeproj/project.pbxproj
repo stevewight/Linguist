@@ -15,6 +15,7 @@
 		AA456B031DC7D02E00D9FD8B /* CircleTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456B021DC7D02E00D9FD8B /* CircleTileView.swift */; };
 		AA456B051DC7E53500D9FD8B /* UserEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA456B041DC7E53500D9FD8B /* UserEnterVC.swift */; };
 		AAA8E3991DC94BE9003750A3 /* DuoLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8E3981DC94BE9003750A3 /* DuoLevel.swift */; };
+		AAA8E39C1DC956CE003750A3 /* VCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8E39B1DC956CE003750A3 /* VCHelper.swift */; };
 		AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261981DC532AA0000E024 /* AppDelegate.swift */; };
 		AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* MainVC.swift */; };
 		AAF2619E1DC532AA0000E024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619C1DC532AA0000E024 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		AA456B021DC7D02E00D9FD8B /* CircleTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleTileView.swift; path = Views/CircleTileView.swift; sourceTree = "<group>"; };
 		AA456B041DC7E53500D9FD8B /* UserEnterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEnterVC.swift; path = Controllers/UserEnterVC.swift; sourceTree = "<group>"; };
 		AAA8E3981DC94BE9003750A3 /* DuoLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoLevel.swift; path = Models/DuoLevel.swift; sourceTree = "<group>"; };
+		AAA8E39B1DC956CE003750A3 /* VCHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCHelper.swift; path = Helpers/VCHelper.swift; sourceTree = "<group>"; };
 		AAF261951DC532AA0000E024 /* Linguist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF261981DC532AA0000E024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF2619A1DC532AA0000E024 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		AAA8E39A1DC956B5003750A3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AAA8E39B1DC956CE003750A3 /* VCHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		AAF2618C1DC532AA0000E024 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 			children = (
 				AAF261981DC532AA0000E024 /* AppDelegate.swift */,
 				AAF2619C1DC532AA0000E024 /* Main.storyboard */,
+				AAA8E39A1DC956B5003750A3 /* Helpers */,
 				AAF261AB1DC535420000E024 /* Models */,
 				AA456B011DC7D01100D9FD8B /* Views */,
 				AAF261AA1DC532D60000E024 /* Controllers */,
@@ -260,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA8E39C1DC956CE003750A3 /* VCHelper.swift in Sources */,
 				AA456B001DC6E6E300D9FD8B /* DuoSkill.swift in Sources */,
 				AAA8E3991DC94BE9003750A3 /* DuoLevel.swift in Sources */,
 				AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */,
