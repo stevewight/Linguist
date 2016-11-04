@@ -15,18 +15,25 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var loadUserButton: UIButton!
     
+    var isReload = false
+    var isFromPresented = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if isReload {
+            loadUserIfSet()
+        } else if isFromPresented {
+            resetInterface()
+        }
+        isReload = false
+        isFromPresented = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //check if username saved in UseDefaults
-        let username = UserDefaults.standard.string(forKey: "DuoUserName")
-        if (username != nil) {
-            userTextField.text = username!
-            beginLoadingUser(username: username!)
-            updateInterface()
-        } else {
-            userTextField.becomeFirstResponder()
-        }
+        loadUserIfSet()
     }
     
     // MARK: @IBAction Methods
@@ -46,12 +53,32 @@ class UserEnterVC: UIViewController, UITextFieldDelegate {
     
     // MARK: (self) Methods
     
+    func loadUserIfSet() {
+        let username = UserDefaults.standard.string(forKey: "DuoUserName")
+        if (username != nil) {
+            userTextField.text = username!
+            beginLoadingUser(username: username!)
+            updateInterface()
+        } else {
+            userTextField.becomeFirstResponder()
+        }
+    }
+    
     func updateInterface() {
         userTextField.resignFirstResponder()
         spinner.startAnimating()
         userTextField.isEnabled = false
         UIView.animate(withDuration: 2.0) {
             self.loadUserButton.alpha = 0.0
+        }
+    }
+    
+    func resetInterface() {
+        userTextField.becomeFirstResponder()
+        spinner.stopAnimating()
+        userTextField.isEnabled = true
+        UIView.animate(withDuration: 2.0) {
+            self.loadUserButton.alpha = 1.0
         }
     }
     

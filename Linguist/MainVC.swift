@@ -36,12 +36,16 @@ class MainVC: UIViewController {
     
     @IBAction func actionButtonTapped(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "DuoUserName")
-        let vc = VCHelper.getUserEnterVC()
-        present(vc, animated: true, completion: nil)
+        let vc = presentingViewController as? UserEnterVC
+        vc?.isFromPresented = true
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func reloadButtonTapped(_ sender: Any) {
-        print("reload button tapped")
+        let vc = presentingViewController as? UserEnterVC
+        vc?.isFromPresented = true
+        vc?.isReload = true
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: (self) Methods
