@@ -253,7 +253,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkV-Be-f2O">
-                                <rect key="frame" x="209" y="173" width="69" height="21"/>
+                                <rect key="frame" x="209" y="180" width="69" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="SzP-fn-h0x"/>
                                     <constraint firstAttribute="height" constant="21" id="f68-cf-wUu"/>
@@ -263,12 +263,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-vX-kf5">
-                                <rect key="frame" x="182" y="109" width="120" height="64"/>
+                                <rect key="frame" x="182" y="116" width="120" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="7aK-pf-vgf"/>
                                     <constraint firstAttribute="height" constant="64" id="tfO-ia-nSI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="64"/>
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -317,7 +317,7 @@
                             <constraint firstItem="h0t-p5-Hrd" firstAttribute="top" secondItem="3xS-G1-9tt" secondAttribute="bottom" constant="8" id="gzZ-Lz-P93"/>
                             <constraint firstItem="iPU-bp-P7e" firstAttribute="centerX" secondItem="c5M-ZL-3nj" secondAttribute="centerX" id="hO4-po-5Tw"/>
                             <constraint firstItem="TFH-Ox-mUB" firstAttribute="centerX" secondItem="rs5-QQ-RBN" secondAttribute="centerX" id="hxu-Cy-kpj"/>
-                            <constraint firstItem="l4N-vX-kf5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="89" id="i1K-wY-ZAf"/>
+                            <constraint firstItem="l4N-vX-kf5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="i1K-wY-ZAf"/>
                             <constraint firstItem="JzZ-Ty-Dky" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m33-SH-jkP"/>
                             <constraint firstItem="Yok-pZ-Vpl" firstAttribute="centerY" secondItem="hfg-RQ-ZkI" secondAttribute="centerY" constant="13" id="nB4-0H-f2Z"/>
                             <constraint firstItem="Yok-pZ-Vpl" firstAttribute="centerX" secondItem="hfg-RQ-ZkI" secondAttribute="centerX" constant="-0.5" id="nSr-an-IfJ"/>
