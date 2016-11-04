@@ -72,9 +72,9 @@ open class CircleTileView: UIView {
             case let r where r >= 0.75:
                 strokeColor = UIColor.white
             case let r where r >= 0.5:
-                strokeColor = UIColor.orange
+                strokeColor = UIColor.white
             case let r where r >= 0.30:
-                strokeColor = UIColor.red
+                strokeColor = UIColor.white
             default:
                 strokeColor = UIColor.white
             }
