@@ -21,6 +21,10 @@ class MainVC: UIViewController {
     @IBOutlet weak var skillsLabel: UILabel!
     @IBOutlet weak var fluencyCircle: CircleTileView!
     @IBOutlet weak var skillsCircle: CircleTileView!
+    @IBOutlet weak var levelProgressCircle: CircleTileView!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var levelProgressLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +51,16 @@ class MainVC: UIViewController {
         let doubleTotal = Double(duoLang.skills.count)
         let doubleLearned = Double(duoLang.numSkillsLearned)
         let skillPercent = doubleLearned/doubleTotal
+        let progressPercent = duoLang.duoLevel.levelPercent()
         
         fluencyLabel.text = fluencyPercent(
             score: duoLang.fluencyScore
         )
         skillsPercentLabel.text = skillsPercent(
             score: skillPercent
+        )
+        levelProgressLabel.text = levelProgressPercent(
+            progress: progressPercent
         )
         streakLabel.text = "\(duoLang.streak)"
         skillsLabel.text = "\(duoLang.numSkillsLearned)"
@@ -62,6 +70,8 @@ class MainVC: UIViewController {
         navBar.topItem?.title = duoLang.languageString
         fluencyCircle.rating = CGFloat(duoLang.fluencyScore)
         skillsCircle.rating = CGFloat(skillPercent)
+        levelProgressCircle.rating = CGFloat(progressPercent)
+        levelLabel.text = String(duoLang.duoLevel.current)
     }
     
     func fluencyPercent(score:Double)->String {
@@ -72,6 +82,11 @@ class MainVC: UIViewController {
     func skillsPercent(score:Double)->String {
         let skillsDouble = score * 100
         return String(format: "%.1f", skillsDouble)
+    }
+    
+    func levelProgressPercent(progress:Double)->String {
+        let progressDouble = progress * 100
+        return String(format: "%.1f", progressDouble)
     }
     
     func extendedString(extended:Bool)->String {

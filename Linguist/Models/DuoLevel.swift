@@ -43,4 +43,10 @@ class DuoLevel: NSObject {
         }
     }
     
+    func levelPercent()->Double {
+        let progressDouble = Double(progress)
+        let totalDouble = Double(points)
+        return progressDouble/totalDouble
+    }
+    
 }
