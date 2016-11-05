@@ -14,4 +14,12 @@ class CircleCell: UICollectionViewCell {
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    func setPercent(percent:Double) {
+        let fullValue = percent * 100
+        percentLabel.text = String(
+            format: "%.1f",
+            fullValue
+        )
+    }
+    
 }

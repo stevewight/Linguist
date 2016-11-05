@@ -66,7 +66,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         let circleStat = circleStats[indexPath.row]
         cell.circleTileView.rating = CGFloat(circleStat.percent)
-        cell.percentLabel.text = circleStat.title
+        cell.setPercent(percent: circleStat.percent)
         cell.descriptionLabel.text = circleStat.desc
         
         return cell
@@ -79,78 +79,41 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     // MARK: (self) Methods
     
     func setupCircleItems() {
-        circleStats.append(CircleStat(
-            percent: 0.3,
-            title: "A",
-            desc: "A"
-        )!)
-        circleStats.append(CircleStat(
-            percent: 0.6,
-            title: "P",
-            desc: "P"
-        )!)
-        circleStats.append(CircleStat(
-            percent: 0.4,
-            title: "S",
-            desc: "S"
-        )!)
-        circleStats.append(CircleStat(
-            percent: 0.8,
-            title: "Z",
-            desc: "Z"
-        )!)
-    }
-    
-    func updateInterface() {
         let duoLang = duoUser.duoLanguage()
         let doubleTotal = Double(duoLang.skills.count)
         let doubleLearned = Double(duoLang.numSkillsLearned)
         let skillPercent = doubleLearned/doubleTotal
         let progressPercent = duoLang.duoLevel.levelPercent()
         
-//        fluencyLabel.text = fluencyPercent(
-//            score: duoLang.fluencyScore
-//        )
-//        skillsPercentLabel.text = skillsPercent(
-//            score: skillPercent
-//        )
-//        levelProgressLabel.text = levelProgressPercent(
-//            progress: progressPercent
-//        )
-//        levelStrengthLabel.text = levelStrengthPercent(
-//            strength: duoLang.languageStrength
-//        )
+        circleStats.append(CircleStat(
+            percent: duoLang.fluencyScore,
+            desc: "% fluent"
+        )!)
+        circleStats.append(CircleStat(
+            percent: skillPercent,
+            desc: "% skill"
+        )!)
+        circleStats.append(CircleStat(
+            percent: progressPercent,
+            desc: "% progress"
+        )!)
+        circleStats.append(CircleStat(
+            percent: duoLang.languageStrength,
+            desc: "% lang. strength"
+        )!)
+    }
+    
+    func updateInterface() {
+        let duoLang = duoUser.duoLanguage()
+        
         streakLabel.text = "\(duoLang.streak)"
         skillsLabel.text = "\(duoLang.numSkillsLearned)"
         extendedLabel.text = extendedString(
             extended: duoUser.streakExtendedToday
         )
         navBar.topItem?.title = duoLang.languageString
-//        fluencyCircle.rating = CGFloat(duoLang.fluencyScore)
-//        skillsCircle.rating = CGFloat(skillPercent)
-//        levelProgressCircle.rating = CGFloat(progressPercent)
-//        levelStrengthCircle.rating = CGFloat(duoLang.languageStrength)
         levelLabel.text = String(duoLang.duoLevel.current)
-    }
-    
-    func fluencyPercent(score:Double)->String {
-        let percentDouble = score * 100
-        return String(format: "%.1f", percentDouble)
-    }
-    
-    func skillsPercent(score:Double)->String {
-        let skillsDouble = score * 100
-        return String(format: "%.1f", skillsDouble)
-    }
-    
-    func levelProgressPercent(progress:Double)->String {
-        let progressDouble = progress * 100
-        return String(format: "%.1f", progressDouble)
-    }
-    
-    func levelStrengthPercent(strength:Double)->String {
-        let strengthDouble = strength * 100
-        return String(format: "%.1f", strengthDouble)
+        collectionView.reloadData()
     }
     
     func extendedString(extended:Bool)->String {

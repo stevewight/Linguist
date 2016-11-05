@@ -11,12 +11,10 @@ import UIKit
 class CircleStat: NSObject {
 
     var percent = 0.0
-    var title = ""
     var desc = ""
     
-    init?(percent:Double,title:String,desc:String) {
+    init?(percent:Double,desc:String) {
         self.percent = percent
-        self.title = title
         self.desc = desc
     }
     
