@@ -1,12 +1,24 @@
 PODS:
   - Alamofire (4.0.1)
+  - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
+
+EXTERNAL SOURCES:
+  UPCarouselFlowLayout:
+    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
+
+CHECKOUT OPTIONS:
+  UPCarouselFlowLayout:
+    :commit: df51f35b7b4df76d283db8dd3c78ac59b542545d
+    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: be0cf1cdc0ccd83896bb05371a0687e740ba5f3e
+PODFILE CHECKSUM: 97d42ebfd7abb20e0341938578219cfdf50deb81
 
 COCOAPODS: 1.1.1

@@ -6,4 +6,5 @@ use_frameworks!
 
 target 'Linguist' do
   pod 'Alamofire', '~> 4.0'
+  pod 'UPCarouselFlowLayout', :git => 'https://github.com/ink-spot/UPCarouselFlowLayout.git'
 end

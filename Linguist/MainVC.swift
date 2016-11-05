@@ -8,30 +8,27 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var client = DuoClient()
     var duoUser = DuoUser()
     
+    var circleStats = [CircleStat]()
+    
     @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var fluencyLabel: UILabel!
-    @IBOutlet weak var skillsPercentLabel: UILabel!
     @IBOutlet weak var streakLabel: UILabel!
     @IBOutlet weak var extendedLabel: UILabel!
     @IBOutlet weak var skillsLabel: UILabel!
-    @IBOutlet weak var levelStrengthLabel: UILabel!
-    @IBOutlet weak var fluencyCircle: CircleTileView!
-    @IBOutlet weak var skillsCircle: CircleTileView!
-    @IBOutlet weak var levelProgressCircle: CircleTileView!
-    @IBOutlet weak var levelStrengthCircle: CircleTileView!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var levelProgressLabel: UILabel!
-    
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         duoUser = DuoClient.sharedInstance.duoUser
         self.updateInterface()
+        setupCircleItems()
+        collectionView.reloadData()
     }
     
     // MARK: IBAction Methods
@@ -50,7 +47,59 @@ class MainVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: UICollectionViewDelegate & UICollectionViewDelegateFlowLayout
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return circleStats.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "CircleCell",
+            for: indexPath
+        ) as! CircleCell
+        
+        let circleStat = circleStats[indexPath.row]
+        cell.circleTileView.rating = CGFloat(circleStat.percent)
+        cell.percentLabel.text = circleStat.title
+        cell.descriptionLabel.text = circleStat.desc
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("collection view tapped")
+    }
+    
     // MARK: (self) Methods
+    
+    func setupCircleItems() {
+        circleStats.append(CircleStat(
+            percent: 0.3,
+            title: "A",
+            desc: "A"
+        )!)
+        circleStats.append(CircleStat(
+            percent: 0.6,
+            title: "P",
+            desc: "P"
+        )!)
+        circleStats.append(CircleStat(
+            percent: 0.4,
+            title: "S",
+            desc: "S"
+        )!)
+        circleStats.append(CircleStat(
+            percent: 0.8,
+            title: "Z",
+            desc: "Z"
+        )!)
+    }
     
     func updateInterface() {
         let duoLang = duoUser.duoLanguage()
@@ -59,28 +108,28 @@ class MainVC: UIViewController {
         let skillPercent = doubleLearned/doubleTotal
         let progressPercent = duoLang.duoLevel.levelPercent()
         
-        fluencyLabel.text = fluencyPercent(
-            score: duoLang.fluencyScore
-        )
-        skillsPercentLabel.text = skillsPercent(
-            score: skillPercent
-        )
-        levelProgressLabel.text = levelProgressPercent(
-            progress: progressPercent
-        )
-        levelStrengthLabel.text = levelStrengthPercent(
-            strength: duoLang.languageStrength
-        )
+//        fluencyLabel.text = fluencyPercent(
+//            score: duoLang.fluencyScore
+//        )
+//        skillsPercentLabel.text = skillsPercent(
+//            score: skillPercent
+//        )
+//        levelProgressLabel.text = levelProgressPercent(
+//            progress: progressPercent
+//        )
+//        levelStrengthLabel.text = levelStrengthPercent(
+//            strength: duoLang.languageStrength
+//        )
         streakLabel.text = "\(duoLang.streak)"
         skillsLabel.text = "\(duoLang.numSkillsLearned)"
         extendedLabel.text = extendedString(
             extended: duoUser.streakExtendedToday
         )
         navBar.topItem?.title = duoLang.languageString
-        fluencyCircle.rating = CGFloat(duoLang.fluencyScore)
-        skillsCircle.rating = CGFloat(skillPercent)
-        levelProgressCircle.rating = CGFloat(progressPercent)
-        levelStrengthCircle.rating = CGFloat(duoLang.languageStrength)
+//        fluencyCircle.rating = CGFloat(duoLang.fluencyScore)
+//        skillsCircle.rating = CGFloat(skillPercent)
+//        levelProgressCircle.rating = CGFloat(progressPercent)
+//        levelStrengthCircle.rating = CGFloat(duoLang.languageStrength)
         levelLabel.text = String(duoLang.duoLevel.current)
     }
     
