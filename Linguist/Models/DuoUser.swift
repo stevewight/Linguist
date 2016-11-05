@@ -15,6 +15,7 @@ class DuoUser: NSObject {
     var streakExtendedToday = false
     var learningLanguage = ""
     var duoLanguages = [String:DuoLanguage]()
+    var lingots = 0
     
     override init() {
         super.init()
@@ -44,6 +45,10 @@ class DuoUser: NSObject {
         
         if let newDuoLanguage = rawJson["language_data"] as? [String:AnyObject] {
             createDuoLanguages(rawJson: newDuoLanguage)
+        }
+        
+        if let newLingots = rawJson["rupees"] as? Int {
+            lingots = newLingots
         }
     }
     

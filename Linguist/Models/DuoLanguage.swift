@@ -12,6 +12,7 @@ class DuoLanguage: NSObject {
 
     var streak = 0
     var fluencyScore = 0.0
+    var languageStrength = 0.0
     var languageString = ""
     var numSkillsLearned = 0
     var improvements = [DuoImprovement]()
@@ -31,6 +32,10 @@ class DuoLanguage: NSObject {
         
         if let newFluencyScore = rawJson["fluency_score"] as? Double {
             fluencyScore = newFluencyScore
+        }
+        
+        if let newLanguageStrength = rawJson["language_strength"] as? Double {
+            languageStrength = newLanguageStrength
         }
         
         if let newLanguageString = rawJson["language_string"] as? String {
