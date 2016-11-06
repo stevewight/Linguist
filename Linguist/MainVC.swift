@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UPCarouselFlowLayout
 
 class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -14,6 +15,19 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var duoUser = DuoUser()
     
     var circleStats = [CircleStat]()
+    
+    var currentPage:Int = 0 {
+        didSet {
+            print("did set currentPage: \(self.currentPage)")
+        }
+    }
+    
+    var pageWidth:CGFloat {
+        let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
+        var newSize = layout.itemSize
+        newSize.width += layout.minimumLineSpacing
+        return newSize.width
+    }
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var streakLabel: UILabel!
@@ -25,6 +39,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentPage = 0
         duoUser = DuoClient.sharedInstance.duoUser
         self.updateInterface()
         setupCircleItems()
@@ -74,6 +89,13 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("collection view tapped")
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.x
+        currentPage = Int(floor((offset - pageWidth / 2) / pageWidth) + 1)
     }
     
     // MARK: (self) Methods
