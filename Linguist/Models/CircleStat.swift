@@ -12,10 +12,12 @@ class CircleStat: NSObject {
 
     var percent = 0.0
     var desc = ""
+    var subDesc = ""
     
-    init?(percent:Double,desc:String) {
+    init?(percent:Double,desc:String,subDesc:String) {
         self.percent = percent
         self.desc = desc
+        self.subDesc = subDesc
     }
     
 }

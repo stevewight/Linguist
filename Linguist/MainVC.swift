@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LTMorphingLabel
 import UPCarouselFlowLayout
 
 class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -19,6 +20,10 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var currentPage:Int = 0 {
         didSet {
             print("did set currentPage: \(self.currentPage)")
+            if currentPage != oldValue {
+                let stat = circleStats[currentPage]
+                subDescLabel.text = stat.subDesc
+            }
         }
     }
     
@@ -31,6 +36,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var subDescLabel: LTMorphingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,19 +110,23 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         circleStats.append(CircleStat(
             percent: duoLang.fluencyScore,
-            desc: "% fluent"
+            desc: "% fluent",
+            subDesc: "\(duoLang.streak) day streak \(extendedString(extended: duoUser.streakExtendedToday))"
         )!)
         circleStats.append(CircleStat(
             percent: skillPercent,
-            desc: "% skill"
+            desc: "% skill",
+            subDesc: "\(duoLang.numSkillsLearned) skills learned with \(duoLang.nextSkillTitle) up next"
         )!)
         circleStats.append(CircleStat(
             percent: progressPercent,
-            desc: "% progress"
+            desc: "% progress",
+            subDesc: "currently level \(duoLang.duoLevel.current) with \(duoLang.duoLevel.left)xp to next level"
         )!)
         circleStats.append(CircleStat(
             percent: duoLang.languageStrength,
-            desc: "% lang. strength"
+            desc: "% lang. strength",
+            subDesc: "\(duoUser.lingots) lingots with \(duoLang.duoLevel.points)xp total"
         )!)
     }
     
@@ -128,7 +138,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func extendedString(extended:Bool)->String {
-        return extended ? "YES" : "NO"
+        return extended ? "extended" : "not extended"
     }
 
 }

@@ -1,24 +1,33 @@
 PODS:
   - Alamofire (4.0.1)
+  - LTMorphingLabel (0.3.0)
   - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - LTMorphingLabel (from `https://github.com/lexrus/LTMorphingLabel.git`, branch `swift3`)
   - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
 
 EXTERNAL SOURCES:
+  LTMorphingLabel:
+    :branch: swift3
+    :git: https://github.com/lexrus/LTMorphingLabel.git
   UPCarouselFlowLayout:
     :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
 
 CHECKOUT OPTIONS:
+  LTMorphingLabel:
+    :commit: 93c60bb1626aa96dbd5e899c82e280d7a785315d
+    :git: https://github.com/lexrus/LTMorphingLabel.git
   UPCarouselFlowLayout:
     :commit: df51f35b7b4df76d283db8dd3c78ac59b542545d
     :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  LTMorphingLabel: 2777d8d9cb699125f48dfcd95d78bd3d77c87ade
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: 97d42ebfd7abb20e0341938578219cfdf50deb81
+PODFILE CHECKSUM: bab5f8b14f30b4606dac8ad7d2eda74a2c2f4cc5
 
 COCOAPODS: 1.1.1

@@ -132,7 +132,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="flI-TO-iUd">
-                                <rect key="frame" x="0.0" y="304" width="375" height="217"/>
+                                <rect key="frame" x="0.0" y="225" width="375" height="217"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="gYE-xu-wb8"/>
@@ -209,20 +209,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KOz-9U-8OS"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum lorem ipsum lorem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p84-hz-xGk" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="10" y="536" width="354" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="MTx-Bc-ytB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="flI-TO-iUd" secondAttribute="bottom" constant="146" id="1vO-9y-d6Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="flI-TO-iUd" secondAttribute="bottom" constant="225" id="1vO-9y-d6Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p84-hz-xGk" secondAttribute="trailing" constant="-5" id="2qj-iW-44B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p84-hz-xGk" secondAttribute="bottom" constant="100" id="87p-xX-pLl"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9RN-HE-CSS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="flI-TO-iUd" secondAttribute="trailing" constant="-16" id="Gp6-z4-fd3"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="S9n-9V-Wjs"/>
                             <constraint firstItem="flI-TO-iUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="cxN-gG-WWE"/>
+                            <constraint firstItem="p84-hz-xGk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="gSV-uw-iej"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NDw-h2-62p" secondAttribute="trailing" constant="-16" id="y19-66-fjj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="flI-TO-iUd" id="9mY-Vl-MAD"/>
                         <outlet property="navBar" destination="NDw-h2-62p" id="mnn-I3-ZEm"/>
+                        <outlet property="subDescLabel" destination="p84-hz-xGk" id="g9b-va-raL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -18,6 +18,7 @@ class DuoLanguage: NSObject {
     var improvements = [DuoImprovement]()
     var skills = [DuoSkill]()
     var duoLevel = DuoLevel()
+    var nextSkillTitle = ""
  
     override init() {
         super.init()
@@ -57,6 +58,12 @@ class DuoLanguage: NSObject {
             for skill in newSkills {
                 let newSkill = DuoSkill(rawJson: skill)
                 skills.append(newSkill!)
+            }
+        }
+        
+        if let newNextSkillTitle = rawJson["next_lesson"] as? [String:AnyObject] {
+            if let nextTitle = newNextSkillTitle["skill_title"] as? String {
+                nextSkillTitle = nextTitle
             }
         }
         
