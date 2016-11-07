@@ -19,10 +19,8 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     var currentPage:Int = 0 {
         didSet {
-            print("did set currentPage: \(self.currentPage)")
             if currentPage != oldValue {
-                let stat = circleStats[currentPage]
-                subDescLabel.text = stat.subDesc
+                self.updateStatsLabels()
             }
         }
     }
@@ -37,14 +35,17 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var subDescLabel: LTMorphingLabel!
+    @IBOutlet weak var subDescLabelTwo: LTMorphingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentPage = 0
         duoUser = DuoClient.sharedInstance.duoUser
-        self.updateInterface()
         setupCircleItems()
         collectionView.reloadData()
+        subDescLabel.morphingEffect = LTMorphingEffect.fall
+        subDescLabelTwo.morphingEffect = LTMorphingEffect.fall
+        updateInterface()
     }
     
     // MARK: IBAction Methods
@@ -111,22 +112,22 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         circleStats.append(CircleStat(
             percent: duoLang.fluencyScore,
             desc: "% fluent",
-            subDesc: "\(duoLang.streak) day streak \(extendedString(extended: duoUser.streakExtendedToday))"
+            subDesc: ["\(duoLang.streak) day streak", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
         )!)
         circleStats.append(CircleStat(
             percent: skillPercent,
             desc: "% skill",
-            subDesc: "\(duoLang.numSkillsLearned) skills learned with \(duoLang.nextSkillTitle) up next"
+            subDesc: ["\(duoLang.numSkillsLearned) skills learned", "Next skill '\(duoLang.nextSkillTitle)'"]
         )!)
         circleStats.append(CircleStat(
             percent: progressPercent,
             desc: "% progress",
-            subDesc: "currently level \(duoLang.duoLevel.current) with \(duoLang.duoLevel.left)xp to next level"
+            subDesc: ["Currently level \(duoLang.duoLevel.current)", "\(duoLang.duoLevel.left)xp to next level"]
         )!)
         circleStats.append(CircleStat(
             percent: duoLang.languageStrength,
             desc: "% lang. strength",
-            subDesc: "\(duoUser.lingots) lingots with \(duoLang.duoLevel.points)xp total"
+            subDesc: ["\(duoUser.lingots) lingots", "\(duoLang.duoLevel.points)xp total"]
         )!)
     }
     
@@ -135,10 +136,21 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         navBar.topItem?.title = duoLang.languageString
         collectionView.reloadData()
+        updateStatsLabels()
+    }
+    
+    func updateStatsLabels() {
+        let stat = circleStats[currentPage]
+        subDescLabel.text = stat.subDesc[0]
+        subDescLabelTwo.text = stat.subDesc[1]
     }
     
     func extendedString(extended:Bool)->String {
-        return extended ? "extended" : "not extended"
+        return extended ? "Extended" : "Not extended"
+    }
+    
+    func extendedEmoji(extended:Bool)->String {
+        return extended ? "😀" : "😅"
     }
 
 }
