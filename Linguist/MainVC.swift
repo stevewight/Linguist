@@ -30,11 +30,6 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var streakLabel: UILabel!
-    @IBOutlet weak var extendedLabel: UILabel!
-    @IBOutlet weak var skillsLabel: UILabel!
-    @IBOutlet weak var levelLabel: UILabel!
-
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -128,13 +123,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func updateInterface() {
         let duoLang = duoUser.duoLanguage()
         
-        streakLabel.text = "\(duoLang.streak)"
-        skillsLabel.text = "\(duoLang.numSkillsLearned)"
-        extendedLabel.text = extendedString(
-            extended: duoUser.streakExtendedToday
-        )
         navBar.topItem?.title = duoLang.languageString
-        levelLabel.text = String(duoLang.duoLevel.current)
         collectionView.reloadData()
     }
     
