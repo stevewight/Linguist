@@ -34,6 +34,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: LTMorphingLabel!
     @IBOutlet weak var subDescLabel: LTMorphingLabel!
     @IBOutlet weak var subDescLabelTwo: LTMorphingLabel!
     
@@ -110,24 +111,28 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let progressPercent = duoLang.duoLevel.levelPercent()
         
         circleStats.append(CircleStat(
+            title: "Fluency",
             percent: duoLang.fluencyScore,
             desc: "% fluent",
             subDesc: ["\(duoLang.streak) day streak", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
         )!)
         circleStats.append(CircleStat(
+            title: "Skills",
             percent: skillPercent,
             desc: "% skill",
             subDesc: ["\(duoLang.numSkillsLearned) skills learned", "Next skill '\(duoLang.nextSkillTitle)'"]
         )!)
         circleStats.append(CircleStat(
+            title: "Level",
             percent: progressPercent,
             desc: "% progress",
             subDesc: ["Currently level \(duoLang.duoLevel.current)", "\(duoLang.duoLevel.left)xp to next level"]
         )!)
         circleStats.append(CircleStat(
+            title: "Strength",
             percent: duoLang.languageStrength,
             desc: "% lang. strength",
-            subDesc: ["\(duoUser.lingots) lingots", "\(duoLang.duoLevel.points)xp total"]
+            subDesc: ["\(duoUser.lingots) lingots 💎", "\(duoLang.duoLevel.points)xp total"]
         )!)
     }
     
@@ -141,6 +146,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     func updateStatsLabels() {
         let stat = circleStats[currentPage]
+        titleLabel.text = stat.title
         subDescLabel.text = stat.subDesc[0]
         subDescLabelTwo.text = stat.subDesc[1]
     }

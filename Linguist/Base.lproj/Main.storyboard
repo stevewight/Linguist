@@ -132,7 +132,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="flI-TO-iUd">
-                                <rect key="frame" x="4" y="279" width="406" height="217"/>
+                                <rect key="frame" x="4" y="173" width="406" height="217"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="gYE-xu-wb8"/>
@@ -210,7 +210,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum lorem ipsum lorem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p84-hz-xGk" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="14" y="516" width="385" height="72"/>
+                                <rect key="frame" x="14" y="565" width="385" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="MTx-Bc-ytB"/>
                                 </constraints>
@@ -227,7 +227,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum lorem ipsum lorem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0r-N5-xar" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="14" y="588" width="385" height="72"/>
+                                <rect key="frame" x="14" y="637" width="385" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="M1j-56-qEb"/>
                                 </constraints>
@@ -243,16 +243,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEu-OY-Arj" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="14" y="80" width="251" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="Fbg-5l-BPD"/>
+                                    <constraint firstAttribute="height" constant="72" id="hBw-5R-Gun"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="37"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingDuration">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingCharacterDelay">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="flI-TO-iUd" secondAttribute="bottom" constant="240" id="1vO-9y-d6Y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p84-hz-xGk" secondAttribute="trailing" constant="-5" id="2qj-iW-44B"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p84-hz-xGk" secondAttribute="bottom" constant="148" id="87p-xX-pLl"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P0r-N5-xar" secondAttribute="bottom" constant="76" id="8gG-yi-IY3"/>
+                            <constraint firstItem="flI-TO-iUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="153" id="5cn-x4-YBc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p84-hz-xGk" secondAttribute="bottom" constant="99" id="87p-xX-pLl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P0r-N5-xar" secondAttribute="bottom" constant="27" id="8gG-yi-IY3"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9RN-HE-CSS"/>
+                            <constraint firstItem="NEu-OY-Arj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="Gn7-nF-XgT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="flI-TO-iUd" secondAttribute="trailing" constant="-16" id="Gp6-z4-fd3"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="S9n-9V-Wjs"/>
+                            <constraint firstItem="NEu-OY-Arj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="alR-nS-JFY"/>
                             <constraint firstItem="flI-TO-iUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="cxN-gG-WWE"/>
                             <constraint firstItem="p84-hz-xGk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="gSV-uw-iej"/>
                             <constraint firstItem="P0r-N5-xar" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="hFv-H7-Usu"/>
@@ -265,6 +285,7 @@
                         <outlet property="navBar" destination="NDw-h2-62p" id="mnn-I3-ZEm"/>
                         <outlet property="subDescLabel" destination="p84-hz-xGk" id="g9b-va-raL"/>
                         <outlet property="subDescLabelTwo" destination="P0r-N5-xar" id="V9d-SQ-FkC"/>
+                        <outlet property="titleLabel" destination="NEu-OY-Arj" id="rDa-S7-437"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
