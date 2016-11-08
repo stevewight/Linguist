@@ -111,25 +111,25 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let progressPercent = duoLang.duoLevel.levelPercent()
         
         circleStats.append(CircleStat(
-            title: "Fluency",
+            title: "Fluency 🇲🇽",
             percent: duoLang.fluencyScore,
             desc: "% fluent",
             subDesc: ["\(duoLang.streak) day streak", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
         )!)
         circleStats.append(CircleStat(
-            title: "Skills",
+            title: "Skills 💭",
             percent: skillPercent,
             desc: "% skill",
             subDesc: ["\(duoLang.numSkillsLearned) skills learned", "Next skill '\(duoLang.nextSkillTitle)'"]
         )!)
         circleStats.append(CircleStat(
-            title: "Level",
+            title: "Level 👍",
             percent: progressPercent,
             desc: "% progress",
             subDesc: ["Currently level \(duoLang.duoLevel.current)", "\(duoLang.duoLevel.left)xp to next level"]
         )!)
         circleStats.append(CircleStat(
-            title: "Strength",
+            title: "Strength 💪",
             percent: duoLang.languageStrength,
             desc: "% lang. strength",
             subDesc: ["\(duoUser.lingots) lingots 💎", "\(duoLang.duoLevel.points)xp total"]

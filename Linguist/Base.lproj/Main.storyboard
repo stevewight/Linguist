@@ -244,7 +244,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEu-OY-Arj" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="14" y="80" width="251" height="72"/>
+                                <rect key="frame" x="81.666666666666686" y="80" width="251" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="Fbg-5l-BPD"/>
                                     <constraint firstAttribute="height" constant="72" id="hBw-5R-Gun"/>
@@ -269,13 +269,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p84-hz-xGk" secondAttribute="bottom" constant="99" id="87p-xX-pLl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P0r-N5-xar" secondAttribute="bottom" constant="27" id="8gG-yi-IY3"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9RN-HE-CSS"/>
-                            <constraint firstItem="NEu-OY-Arj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="Gn7-nF-XgT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="flI-TO-iUd" secondAttribute="trailing" constant="-16" id="Gp6-z4-fd3"/>
                             <constraint firstItem="NDw-h2-62p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="S9n-9V-Wjs"/>
                             <constraint firstItem="NEu-OY-Arj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="alR-nS-JFY"/>
                             <constraint firstItem="flI-TO-iUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="cxN-gG-WWE"/>
                             <constraint firstItem="p84-hz-xGk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="gSV-uw-iej"/>
                             <constraint firstItem="P0r-N5-xar" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="hFv-H7-Usu"/>
+                            <constraint firstItem="NEu-OY-Arj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hqt-ph-bmi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P0r-N5-xar" secondAttribute="trailing" constant="-5" id="mt5-pW-6dB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NDw-h2-62p" secondAttribute="trailing" constant="-16" id="y19-66-fjj"/>
                         </constraints>
