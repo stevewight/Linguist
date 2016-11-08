@@ -114,24 +114,24 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             title: "Fluency 🇲🇽",
             percent: duoLang.fluencyScore,
             desc: "% fluent",
-            subDesc: ["🔥 \(duoLang.streak) day streak of \(duoUser.dailyGoal)xp a day", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
+            subDesc: ["🔥 \(duoLang.streak) day streak of \(duoUser.dailyGoal)xp goal", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
         )!)
         circleStats.append(CircleStat(
             title: "Skills 💭",
             percent: skillPercent,
-            desc: "% skill",
+            desc: "% skills complete",
             subDesc: ["😎 \(duoLang.numSkillsLearned) skills learned", "Next skill '\(duoLang.nextSkillTitle)' 🤘"]
         )!)
         circleStats.append(CircleStat(
             title: "Level \(duoLang.duoLevel.current) 👍",
             percent: progressPercent,
-            desc: "% progress",
+            desc: "% level progress",
             subDesc: ["😁 \(duoLang.duoLevel.progress)xp this level", "\(duoLang.duoLevel.left)xp to next level 🤓"]
         )!)
         circleStats.append(CircleStat(
             title: "Strength 💪",
             percent: duoLang.languageStrength,
-            desc: "% lang. strength",
+            desc: "% language strength",
             subDesc: ["\(duoUser.lingots) lingots 💎", "🎉 \(duoLang.duoLevel.points)xp total"]
         )!)
     }
