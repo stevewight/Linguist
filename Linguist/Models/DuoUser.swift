@@ -16,6 +16,7 @@ class DuoUser: NSObject {
     var learningLanguage = ""
     var duoLanguages = [String:DuoLanguage]()
     var lingots = 0
+    var dailyGoal = 0
     
     override init() {
         super.init()
@@ -49,6 +50,10 @@ class DuoUser: NSObject {
         
         if let newLingots = rawJson["rupees"] as? Int {
             lingots = newLingots
+        }
+        
+        if let newDailyGoal = rawJson["daily_goal"] as? Int {
+            dailyGoal = newDailyGoal
         }
     }
     

@@ -17,7 +17,7 @@ open class CircleTileView: UIView {
     @IBInspectable open var rating: CGFloat = 0.0 {
         didSet { updateLayerProperties() }
     }
-    @IBInspectable var lineWidth: Double = 10.0 {
+    @IBInspectable var lineWidth: Double = 14.0 {
         didSet { updateLayerProperties() }
     }
     
