@@ -18,8 +18,8 @@
 		AAA8E39C1DC956CE003750A3 /* VCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8E39B1DC956CE003750A3 /* VCHelper.swift */; };
 		AAA8E39E1DCDC17D003750A3 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8E39D1DCDC17D003750A3 /* CircleCell.swift */; };
 		AAA8E3A01DCDC492003750A3 /* CircleStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA8E39F1DCDC492003750A3 /* CircleStat.swift */; };
+		AAECCB3C1DE56BA1004B7275 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAECCB3B1DE56BA1004B7275 /* MainVC.swift */; };
 		AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF261981DC532AA0000E024 /* AppDelegate.swift */; };
-		AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2619A1DC532AA0000E024 /* MainVC.swift */; };
 		AAF2619E1DC532AA0000E024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619C1DC532AA0000E024 /* Main.storyboard */; };
 		AAF261A01DC532AA0000E024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF2619F1DC532AA0000E024 /* Assets.xcassets */; };
 		AAF261A31DC532AA0000E024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF261A11DC532AA0000E024 /* LaunchScreen.storyboard */; };
@@ -39,9 +39,9 @@
 		AAA8E39B1DC956CE003750A3 /* VCHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCHelper.swift; path = Helpers/VCHelper.swift; sourceTree = "<group>"; };
 		AAA8E39D1DCDC17D003750A3 /* CircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleCell.swift; path = Views/CircleCell.swift; sourceTree = "<group>"; };
 		AAA8E39F1DCDC492003750A3 /* CircleStat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleStat.swift; path = Models/CircleStat.swift; sourceTree = "<group>"; };
+		AAECCB3B1DE56BA1004B7275 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Controllers/MainVC.swift; sourceTree = "<group>"; };
 		AAF261951DC532AA0000E024 /* Linguist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linguist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF261981DC532AA0000E024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAF2619A1DC532AA0000E024 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		AAF2619D1DC532AA0000E024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAF2619F1DC532AA0000E024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF261A21DC532AA0000E024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		AAF261AA1DC532D60000E024 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AAF2619A1DC532AA0000E024 /* MainVC.swift */,
+				AAECCB3B1DE56BA1004B7275 /* MainVC.swift */,
 				AA456B041DC7E53500D9FD8B /* UserEnterVC.swift */,
 			);
 			name = Controllers;
@@ -280,7 +280,6 @@
 				AAA8E39C1DC956CE003750A3 /* VCHelper.swift in Sources */,
 				AA456B001DC6E6E300D9FD8B /* DuoSkill.swift in Sources */,
 				AAA8E3991DC94BE9003750A3 /* DuoLevel.swift in Sources */,
-				AAF2619B1DC532AA0000E024 /* MainVC.swift in Sources */,
 				AA456B031DC7D02E00D9FD8B /* CircleTileView.swift in Sources */,
 				AAF261AD1DC535720000E024 /* DuoClient.swift in Sources */,
 				AA456B051DC7E53500D9FD8B /* UserEnterVC.swift in Sources */,
@@ -290,6 +289,7 @@
 				AAA8E39E1DCDC17D003750A3 /* CircleCell.swift in Sources */,
 				AAF261991DC532AA0000E024 /* AppDelegate.swift in Sources */,
 				AA456AFA1DC5412300D9FD8B /* DuoUser.swift in Sources */,
+				AAECCB3C1DE56BA1004B7275 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
