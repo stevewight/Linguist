@@ -104,36 +104,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     // MARK: (self) Methods
     
     func setupCircleItems() {
-        let duoLang = duoUser.duoLanguage()
-        let doubleTotal = Double(duoLang.skills.count)
-        let doubleLearned = Double(duoLang.numSkillsLearned)
-        let skillPercent = doubleLearned/doubleTotal
-        let progressPercent = duoLang.duoLevel.levelPercent()
-        
-        circleStats.append(CircleStat(
-            title: "Fluency 🇲🇽",
-            percent: duoLang.fluencyScore,
-            desc: "% fluent",
-            subDesc: ["🔥 \(duoLang.streak) day streak of \(duoUser.dailyGoal)xp goal", "\(extendedString(extended: duoUser.streakExtendedToday)) today \(extendedEmoji(extended: duoUser.streakExtendedToday))"]
-        )!)
-        circleStats.append(CircleStat(
-            title: "Skills 💭",
-            percent: skillPercent,
-            desc: "% skills complete",
-            subDesc: ["😎 \(duoLang.numSkillsLearned) skills learned", "Next skill '\(duoLang.nextSkillTitle)' 🤘"]
-        )!)
-        circleStats.append(CircleStat(
-            title: "Level \(duoLang.duoLevel.current) 👍",
-            percent: progressPercent,
-            desc: "% level progress",
-            subDesc: ["😁 \(duoLang.duoLevel.progress)xp this level", "\(duoLang.duoLevel.left)xp to next level 🤓"]
-        )!)
-        circleStats.append(CircleStat(
-            title: "Strength 💪",
-            percent: duoLang.languageStrength,
-            desc: "% language strength",
-            subDesc: ["\(duoUser.lingots) lingots 💎", "🎉 \(duoLang.duoLevel.points)xp total"]
-        )!)
+        circleStats = CircleStatFactory.build(duoUser: duoUser)
     }
     
     func updateInterface() {
@@ -149,14 +120,6 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         titleLabel.text = stat.title
         subDescLabel.text = stat.subDesc[0]
         subDescLabelTwo.text = stat.subDesc[1]
-    }
-    
-    func extendedString(extended:Bool)->String {
-        return extended ? "Extended" : "Not extended"
-    }
-    
-    func extendedEmoji(extended:Bool)->String {
-        return extended ? "😀" : "😅"
     }
 
 }
