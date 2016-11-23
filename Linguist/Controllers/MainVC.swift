@@ -44,8 +44,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         duoUser = DuoClient.sharedInstance.duoUser
         setupCircleItems()
         collectionView.reloadData()
-        subDescLabel.morphingEffect = LTMorphingEffect.fall
-        subDescLabelTwo.morphingEffect = LTMorphingEffect.fall
+        setMorphingLabels()
         updateInterface()
     }
     
@@ -53,16 +52,11 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBAction func actionButtonTapped(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "DuoUserName")
-        let vc = presentingViewController as? UserEnterVC
-        vc?.isFromPresented = true
-        dismiss(animated: true, completion: nil)
+        closeVC(isFromPresented: true, isReload: false)
     }
     
     @IBAction func reloadButtonTapped(_ sender: Any) {
-        let vc = presentingViewController as? UserEnterVC
-        vc?.isFromPresented = true
-        vc?.isReload = true
-        dismiss(animated: true, completion: nil)
+        closeVC(isFromPresented: true, isReload: true)
     }
     
     // MARK: UICollectionViewDelegate & UICollectionViewDelegateFlowLayout
@@ -90,10 +84,6 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("collection view tapped")
-    }
-    
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -103,13 +93,24 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     // MARK: (self) Methods
     
+    func setMorphingLabels() {
+        subDescLabel.morphingEffect = LTMorphingEffect.fall
+        subDescLabelTwo.morphingEffect = LTMorphingEffect.fall
+    }
+    
+    func closeVC(isFromPresented:Bool, isReload:Bool) {
+        let vc = presentingViewController as? UserEnterVC
+        vc?.isFromPresented = isFromPresented
+        vc?.isReload = isReload
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setupCircleItems() {
         circleStats = CircleStatFactory.build(duoUser: duoUser)
     }
     
     func updateInterface() {
         let duoLang = duoUser.duoLanguage()
-        
         navBar.topItem?.title = duoLang.languageString
         collectionView.reloadData()
         updateStatsLabels()
