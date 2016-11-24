@@ -19,7 +19,6 @@ class DuoClient: NSObject {
         return DuoClient()
     }()
 
-    // user: steve296840
     let baseURL = "https://api.duolingo.com/"
     var currentUser = ""
     var duoUser = DuoUser()

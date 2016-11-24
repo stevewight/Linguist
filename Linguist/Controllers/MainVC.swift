@@ -12,6 +12,12 @@ import UPCarouselFlowLayout
 
 class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: LTMorphingLabel!
+    @IBOutlet weak var subDescLabel: LTMorphingLabel!
+    @IBOutlet weak var subDescLabelTwo: LTMorphingLabel!
+    
     var client = DuoClient()
     var duoUser = DuoUser()
     
@@ -31,12 +37,6 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         newSize.width += layout.minimumLineSpacing
         return newSize.width
     }
-    
-    @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var titleLabel: LTMorphingLabel!
-    @IBOutlet weak var subDescLabel: LTMorphingLabel!
-    @IBOutlet weak var subDescLabelTwo: LTMorphingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
