@@ -13,17 +13,17 @@ protocol DuoClientDelegate {
     func successLoadingUser()
 }
 
-class DuoClient: NSObject {
+public class DuoClient: NSObject {
     
-    static let sharedInstance = {
+    public static let sharedInstance = {
         return DuoClient()
     }()
 
-    let baseURL = "https://api.duolingo.com/"
-    var currentUser = ""
-    var duoUser = DuoUser()
+    public let baseURL = "https://api.duolingo.com/"
+    public var currentUser = ""
+    public var duoUser = DuoUser()
     
-    func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void, failure:@escaping ()->Void) {
+    public func loadDuoUser(success:@escaping (_ newUser:DuoUser)->Void, failure:@escaping ()->Void) {
         let userURL = baseURL + "users/\(currentUser)"
        
         Alamofire.request(userURL).responseJSON { (response) in

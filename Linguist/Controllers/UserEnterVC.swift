@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DuoKit
 
 class UserEnterVC: UIViewController, UITextFieldDelegate {
 

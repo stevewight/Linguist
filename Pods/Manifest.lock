@@ -1,14 +1,18 @@
 PODS:
   - Alamofire (4.0.1)
+  - DuoKit (0.0.1):
+    - Alamofire (~> 4.0)
   - LTMorphingLabel (0.3.0)
   - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - DuoKit (from `https://github.com/stevewight/DuoKit.git`)
   - LTMorphingLabel (from `https://github.com/lexrus/LTMorphingLabel.git`, branch `swift3`)
   - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
 
 EXTERNAL SOURCES:
+  DuoKit:
+    :git: https://github.com/stevewight/DuoKit.git
   LTMorphingLabel:
     :branch: swift3
     :git: https://github.com/lexrus/LTMorphingLabel.git
@@ -16,6 +20,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
 
 CHECKOUT OPTIONS:
+  DuoKit:
+    :commit: 2c186f4008170611bb5e28fa7c6fe39b4cfe9817
+    :git: https://github.com/stevewight/DuoKit.git
   LTMorphingLabel:
     :commit: 93c60bb1626aa96dbd5e899c82e280d7a785315d
     :git: https://github.com/lexrus/LTMorphingLabel.git
@@ -25,9 +32,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  DuoKit: 145b2975e07dc800bf407e229290929a47a6b69d
   LTMorphingLabel: 2777d8d9cb699125f48dfcd95d78bd3d77c87ade
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: bab5f8b14f30b4606dac8ad7d2eda74a2c2f4cc5
+PODFILE CHECKSUM: 4afc0a203c07200b881d1874f1ed978186859cb6
 
 COCOAPODS: 1.1.1

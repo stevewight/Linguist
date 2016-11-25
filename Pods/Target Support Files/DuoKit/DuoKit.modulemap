@@ -1,0 +1,6 @@
+framework module DuoKit {
+  umbrella header "DuoKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

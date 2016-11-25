@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DuoKit
 import LTMorphingLabel
 import UPCarouselFlowLayout
 

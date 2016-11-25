@@ -8,21 +8,21 @@
 
 import UIKit
 
-class DuoUser: NSObject {
+public class DuoUser: NSObject {
     
-    var username = ""
-    var created = ""
-    var streakExtendedToday = false
-    var learningLanguage = ""
-    var duoLanguages = [String:DuoLanguage]()
-    var lingots = 0
-    var dailyGoal = 0
+    public var username = ""
+    public var created = ""
+    public var streakExtendedToday = false
+    public var learningLanguage = ""
+    public var duoLanguages = [String:DuoLanguage]()
+    public var lingots = 0
+    public var dailyGoal = 0
     
-    override init() {
+    public override init() {
         super.init()
     }
 
-    init?(rawJson:[String:AnyObject]) {
+    public init?(rawJson:[String:AnyObject]) {
         super.init()
         
         if let newUserName = rawJson["username"] as? String {
@@ -57,7 +57,7 @@ class DuoUser: NSObject {
         }
     }
     
-    func duoLanguage()->DuoLanguage {
+    public func duoLanguage()->DuoLanguage {
         if duoLanguages.count > 0 {
             return duoLanguages[learningLanguage]!
         } else {

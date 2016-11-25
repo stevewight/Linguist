@@ -5,7 +5,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Linguist' do
-  pod 'Alamofire', '~> 4.0'
+  pod 'DuoKit', :git => 'https://github.com/stevewight/DuoKit.git'
   pod 'UPCarouselFlowLayout', :git => 'https://github.com/ink-spot/UPCarouselFlowLayout.git'
   pod 'LTMorphingLabel', :git => 'https://github.com/lexrus/LTMorphingLabel.git', :branch => 'swift3'
 end

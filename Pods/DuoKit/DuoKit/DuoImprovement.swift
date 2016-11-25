@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DuoImprovement: NSObject {
+public class DuoImprovement: NSObject {
     
-    var value = 0
-    var datetime = Date()
+    public var value = 0
+    public var datetime = Date()
 
-    init?(rawJson:[String:AnyObject]) {
+    public init?(rawJson:[String:AnyObject]) {
         super.init()
         
         if let newValue = rawJson["improvement"] as? Int {
