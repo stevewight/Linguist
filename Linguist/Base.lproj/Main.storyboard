@@ -50,7 +50,7 @@
                                 </connections>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="W4a-db-nSG">
-                                <rect key="frame" x="141.5" y="374" width="37" height="37"/>
+                                <rect key="frame" x="142" y="374" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="K8D-9R-qmq"/>
                                     <constraint firstAttribute="width" constant="37" id="MDP-Yf-WbE"/>
@@ -65,11 +65,22 @@
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linguist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzT-LK-dZ4" userLabel="Linguist">
+                                <rect key="frame" x="17" y="28" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bAf-l6-ntM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="31"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xzT-LK-dZ4" firstAttribute="top" secondItem="1nw-Uv-9c9" secondAttribute="bottom" constant="8" id="2Kn-3V-gBF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jyh-U2-hkt" secondAttribute="trailing" id="36H-Nu-UmZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jyh-U2-hkt" secondAttribute="leading" id="6FG-q0-TPO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xzT-LK-dZ4" secondAttribute="trailing" constant="-1" id="LVa-lh-iI0"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xgk-SF-mwW" secondAttribute="leading" id="OL4-XW-pv3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tso-io-uAR" secondAttribute="leading" id="PwP-4M-95m"/>
                             <constraint firstItem="tso-io-uAR" firstAttribute="top" secondItem="Xgk-SF-mwW" secondAttribute="bottom" constant="33" id="UoB-MZ-ugz"/>
@@ -77,6 +88,7 @@
                             <constraint firstItem="jyh-U2-hkt" firstAttribute="top" secondItem="1nw-Uv-9c9" secondAttribute="bottom" constant="67" id="bXJ-Vh-lLg"/>
                             <constraint firstItem="dRD-At-glR" firstAttribute="top" secondItem="W4a-db-nSG" secondAttribute="bottom" constant="157" id="eGl-Ej-CB9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tso-io-uAR" secondAttribute="trailing" id="imD-NS-Vdi"/>
+                            <constraint firstItem="xzT-LK-dZ4" firstAttribute="leading" secondItem="7fj-hP-Tig" secondAttribute="leadingMargin" constant="1" id="qvo-TB-CT9"/>
                             <constraint firstItem="dRD-At-glR" firstAttribute="top" secondItem="tso-io-uAR" secondAttribute="bottom" constant="301" id="tMn-Hg-gCz"/>
                             <constraint firstItem="W4a-db-nSG" firstAttribute="centerX" secondItem="7fj-hP-Tig" secondAttribute="centerX" id="tPc-gw-z9q"/>
                         </constraints>
@@ -90,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYW-XT-mnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840.79999999999995" y="81.409295352323838"/>
+            <point key="canvasLocation" x="-841.875" y="81.338028169014081"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
