@@ -3,10 +3,11 @@ iOS app for using the [DuoKit](https://github.com/stevewight/DuoKit) **_Swift 3_
 
 ![](https://github.com/stevewight/Linguist/blob/master/images/Linguist.gif)
 
-## With Some Help
+## Pods Used
 
-Built with some help from other pods:
+Built with some help from:
 
+* [DuoKit](https://github.com/stevewight/DuoKit)
 * [UPCarouselFlowLayout](https://github.com/ink-spot/UPCarouselFlowLayout)
 * [LTMorphingLabel](https://github.com/lexrus/LTMorphingLabel)
 
