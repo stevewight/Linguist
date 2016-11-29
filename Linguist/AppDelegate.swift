@@ -3,7 +3,7 @@
 //  Linguist
 //
 //  Created by Steve on 10/29/16.
-//  Copyright © 2016 31Labs. All rights reserved.
+//  Copyright © 2016 Steve Wight. All rights reserved.
 //
 
 import UIKit
